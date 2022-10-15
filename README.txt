@@ -3,3 +3,6 @@ Hello!
 Checklists and Bug report are stored as a simple .txt files on the top of the project's structure
 
 Main automation tests are stored in "src/test/java/com/englishdom"
+
+Tests can be launched by TestNG. In case of Maven - there is the tag "suiteXmlFiles" in pom.xml file that defines the main tesng file with classes for launching.
+This tesng file is not created yet because there were no need for that and not required.
