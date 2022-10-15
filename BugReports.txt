@@ -1,0 +1,64 @@
+
+
+1. User is allowed to register account without setting account's password
+
+Issue type : Bug
+Priority : Medium
+Severity : Major
+
+Steps to reproduce:
+    1. Go to "https://www.englishdom.com"
+    2. Click the "Login" button
+    3. Go to the "Registration" tab
+    4. Fill in the email field with existing email
+    5. Leave password field empty
+    6. Click the "Register" buttons
+
+ Actual behavior: User is registered in the system without password
+ Expected behavior: System should now allow to create an account without password
+
+ Description ( optional ) : Such a system behavior misleads the user, because if the user didn't set his password later
+ in the account settings - he will not be able to login to the system after log out.
+
+
+2. Phone field in application form doesn't validate input data
+
+Issue type : Bug
+Priority : Medium
+Severity : Major
+
+Steps to reproduce:
+    1. Go to "https://www.englishdom.com/ua/job/"
+    2. Find the application form for the free lesson
+    3. Fill in the "Name" field
+    4. Choose specialization from drop-down
+    5. Fill in the email field with correct email
+    6. Fill input field with invalid phone "+38050555555FF"
+    6. Click the "Send application" button
+
+Actual behavior: An application was sent
+Expected behavior: System should make the validation of the phone field and show an error about incorrect phone number
+
+Description ( optional ): Phone field is very important field for such applications, because HR team should have the possibility
+to phone the candidate by phone. Also, this field should be stored in the DB in the correct format
+
+
+3. Missing translations for some pages for logged in user
+
+Issue type : Bug
+Priority : Low
+Severity : Low
+
+Steps to reproduce:
+
+    1. Go to "https://www.englishdom.com/ua"
+    2. Check that all texts in the Ukrainian language
+    3. Log in as existing user or register a new user ( will be automatically logged in after registration)
+    4.User is automatically navigated to "https://www.englishdom.com/home/"
+
+Actual behavior: All texts on the page does not match the selected language OR / AND chosen browser language
+Expected behavior: All texts on the page must correspond to the selected language
+
+Description ( optional ): Such difference in languages on the page should not be present. User while surfacing pages sees two different
+languages.
+

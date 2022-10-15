@@ -1,0 +1,50 @@
+
+
+1. Checklist for checkThatExistingUserCanLogin() scenario :
+
+Test Case ID: #1
+Test Scenario: To authenticate a successful user login with valid credentials
+Test Steps:
+The user navigates to "https://www.englishdom.com"
+In the ’email’ field,  user enters a registered email address.
+User enters the registered password.
+The user clicks ‘Увійти’
+Prerequisites: A registered user has unique username and password.
+Browser: Chrome latest
+Test Data: Legitimate username and password.
+Expected/Intended Results: Once username and password are entered, the web page redirects to the main landing page and user avatar is displayed
+Actual Results: As Expected
+Test Status – Pass
+
+
+2. Checklist for checkLoginWithRandomNonExistingCredentials() scenario :
+
+Test Case ID: #2
+Test Scenario: To check negative case when the person can not login with non-existing credentials
+Test Steps:
+The user navigates to "https://www.englishdom.com"
+In the ’email’ field,  user enters a random, non-existing email address.
+User enters the random numbers in password field.
+The user clicks ‘Увійти’
+Prerequisites: All input data is random.
+Browser: Chrome latest
+Test Data: Random, non-existing.
+Expected/Intended Results: Once username and password are entered, the login form should display error, asserting that username or password are incorrect
+Actual Results: As Expected
+Test Status – Pass
+
+3. Checklist for checkLogInWithIncorrectPassword() scenario :
+
+Test Case ID: #3
+Test Scenario: To check negative case when the person can not login with existing email but incorrect password
+Test Steps:
+The user navigates to "https://www.englishdom.com"
+In the ’email’ field,  user enters valid existing email address.
+User enters the random numbers in password field.
+The user clicks ‘Увійти’
+Prerequisites: User exists in the system
+Browser: Chrome latest
+Test Data: Email is valid, password is random ( invalid )
+Expected/Intended Results: Once username and password are entered, the login form should display error, asserting that username or password are incorrect
+Actual Results: As Expected
+Test Status – Pass
