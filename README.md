@@ -4,7 +4,10 @@ Checklists and Bug report are stored as a simple .txt files on the top of the pr
 
 Main automation tests are stored in "src/test/java/com/englishdom"
 
-Tests can be launched by TestNG. In case of Maven - there is the tag "suiteXmlFiles" in pom.xml file that defines the main tesng file with classes for launching.
+You can run tests using TestNG or Maven.
+Tests divided into groups, so can be easily run by Maven e.g. using command "mvn test -Dgroups=ApiTests" or "mvn test -Dgroups=LoginTests".
+Added tesng.xml files, so that you can run whole class for example
+
 This tesng file is not created yet because there were no need for that and not required.
 
 To run the tests locally on your laptop you need to : 
