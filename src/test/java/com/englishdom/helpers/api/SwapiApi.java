@@ -17,7 +17,7 @@ public class SwapiApi {
                 .get(endPoint)
                 .then().statusCode(200)
                 .assertThat()
-                .body(JsonSchemaValidator.matchesJsonSchema(new File("src/test/java/com/englishdom/helpers/data/ResponseExampleJson.json")));
+                .body(JsonSchemaValidator.matchesJsonSchema(new File("src/test/java/com/englishdom/helpers/data/responsejson/ResponseExampleJson.json")));
     }
 
 
