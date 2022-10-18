@@ -21,7 +21,7 @@ public class LoginFormTest extends TestBase {
     }
 
     @Description("Check that existing user can login")
-    @Test
+    @Test(groups = {"LoginTests"})
     void checkThatExistingUserCanLogin() {
         User user = new User();
 
@@ -38,7 +38,7 @@ public class LoginFormTest extends TestBase {
     }
 
     @Description("Check that user can not login with random non-existing credentials")
-    @Test
+    @Test(groups = {"LoginTests"})
     void checkLoginWithRandomNonExistingCredentials() {
         MainPage mainPage = new MainPage();
         mainPage
@@ -56,7 +56,7 @@ public class LoginFormTest extends TestBase {
     }
 
     @Description("Check that user can not login with correct email but incorrect password")
-    @Test
+    @Test(groups = {"LoginTests"})
     void checkLogInWithIncorrectPassword() {
         User user = new User();
 
