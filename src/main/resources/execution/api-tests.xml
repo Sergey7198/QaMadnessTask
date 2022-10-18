@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="api-tests-suite" thread-count="4" parallel="methods">
+    <groups>
+        <run>
+            <include name="ApiTests"/>
+        </run>
+    </groups>
+    <test name="API">
+        <classes>
+            <class name="com.englishdom.scenarios.SwapiApiTest"/>
+        </classes>
+    </test>
+</suite>
