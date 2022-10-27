@@ -1,0 +1,8 @@
+{
+  "environment" : {
+    "test" : {
+      "url" : "https://www.englishdom.com/",
+      "apiUrl" : "https://swapi.dev/api/starships/9/"
+    }
+  }
+}
