@@ -32,4 +32,8 @@ public class Config {
         return getEnvironmentData(environment).getUrl();
     }
 
+    public static String getApiURL(String environment) {
+        return getEnvironmentData(environment).getApiUrl();
+    }
+
 }

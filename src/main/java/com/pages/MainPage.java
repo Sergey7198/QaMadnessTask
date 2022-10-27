@@ -2,6 +2,7 @@ package com.pages;
 
 import com.codeborne.selenide.*;
 import io.qameta.allure.Step;
+import com.helpers.data.config.Config;
 
 
 import static com.codeborne.selenide.Selenide.*;
@@ -14,7 +15,7 @@ public class MainPage {
 
     @Step
     public MainPage openMainPage() {
-        return Selenide.open("", MainPage.class);
+        return Selenide.open(Config.getEnvironmentURL("test"), MainPage.class);
     }
 
     @Step

@@ -10,7 +10,7 @@ import java.io.File;
 public class SwapiApi {
 
     public static void validateRepsonseWithJsonSchema(String pathToSchema) {
-        String endPoint = Config.getEnvironmentURL("test");
+        String endPoint = Config.getApiURL("test");
         RestAssured.given()
                 .filter(new AllureRestAssured())
                 .log().all()
