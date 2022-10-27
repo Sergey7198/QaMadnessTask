@@ -66,7 +66,7 @@ public class LoginFormTest extends TestBase {
                 .fillInPasswordField(GeneratedRandomValues.generateRandomPassword())
                 .clickToLogin();
         assertThat(signInForm.getLoginErrorMessage()).contains(GlobalTexts.LOGIN_ERROR_MESSAGE.getMessage());
-        System.out.println(WebDriverRunner.getWebDriver().getCurrentUrl());
+        System.out.println(WebDriverRunner.getWebDriver().getCurrentUrl()+ " TEST");
     }
 
 }
