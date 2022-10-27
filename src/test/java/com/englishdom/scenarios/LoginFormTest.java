@@ -41,7 +41,8 @@ public class LoginFormTest extends TestBase {
         mainPage
                 .clickSignInButton()
                 .assertAuthorizationModalIsDisplayed();
-        SignInForm signInForm = new SignInForm();
+        SignInForm signInForm =
+                new SignInForm();
         signInForm
                 .fillInEmailField(email)
                 .fillInPasswordField(password)
