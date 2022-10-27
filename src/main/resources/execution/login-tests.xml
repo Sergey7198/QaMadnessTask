@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="login_test_suite" thread-count="4" parallel="methods">
-    <groups>
-        <run>
-            <include name="LoginTests"/>
-        </run>
-    </groups>
     <test name="UI">
         <classes>
             <class name="com.englishdom.scenarios.LoginFormTest"/>

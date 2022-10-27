@@ -1,24 +1,19 @@
 package com.englishdom.scenarios;
 
-import com.englishdom.helpers.data.GlobalTexts;
-import com.englishdom.helpers.data.User;
-import com.englishdom.utils.helpers.DriverHelpers;
-import com.englishdom.utils.TestBase;
-import com.englishdom.pages.MainPage;
-import com.englishdom.pages.SignInForm;
-import com.englishdom.utils.helpers.GeneratedRandomValues;
+import com.data.TestDataProvider;
+import com.helpers.data.GlobalTexts;
+import com.helpers.data.User;
+import com.base.TestBase;
+import com.pages.MainPage;
+import com.pages.SignInForm;
+import com.utils.helpers.GeneratedRandomValues;
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
+import com.codeborne.selenide.WebDriverRunner;
 
 import static org.assertj.core.api.Assertions.*;
 
 public class LoginFormTest extends TestBase {
-
-    DriverHelpers driverHelpers = new DriverHelpers();
-
-    private void waitForPageLoaded() {
-        driverHelpers.waitUntilPageIsLoaded();
-    }
 
     @Description("Check that existing user can login")
     @Test(groups = {"LoginTests"})
@@ -38,21 +33,21 @@ public class LoginFormTest extends TestBase {
     }
 
     @Description("Check that user can not login with random non-existing credentials")
-    @Test(groups = {"LoginTests"})
-    void checkLoginWithRandomNonExistingCredentials() {
+    @Test(groups = {"LoginTests"}, dataProvider = "validLoginData", dataProviderClass = TestDataProvider.class)
+    void checkLoginWithRandomNonExistingCredentials(String typeOfTest, String email, String password) {
         MainPage mainPage = new MainPage();
         mainPage
                 .openMainPage();
-        waitForPageLoaded();
         mainPage
                 .clickSignInButton()
                 .assertAuthorizationModalIsDisplayed();
         SignInForm signInForm = new SignInForm();
         signInForm
-                .fillInEmailField(GeneratedRandomValues.generateRandomEmail())
-                .fillInPasswordField(GeneratedRandomValues.generateRandomNumber())
+                .fillInEmailField(email)
+                .fillInPasswordField(password)
                 .clickToLogin();
         assertThat(signInForm.getLoginErrorMessage()).contains(GlobalTexts.LOGIN_ERROR_MESSAGE.getMessage());
+
     }
 
     @Description("Check that user can not login with correct email but incorrect password")
@@ -67,9 +62,10 @@ public class LoginFormTest extends TestBase {
         SignInForm signInForm = new SignInForm();
         signInForm
                 .fillInEmailField(user.getEmail())
-                .fillInPasswordField("777777777")
+                .fillInPasswordField(GeneratedRandomValues.generateRandomPassword())
                 .clickToLogin();
         assertThat(signInForm.getLoginErrorMessage()).contains(GlobalTexts.LOGIN_ERROR_MESSAGE.getMessage());
+        System.out.println(WebDriverRunner.getWebDriver().getCurrentUrl());
     }
 
 }

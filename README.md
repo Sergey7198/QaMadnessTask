@@ -12,3 +12,4 @@ To run the tests locally on your laptop you need to :
 1. Clone the project from github
 2. Go to the test class and run using TestNG
 3. For the API scripts, if you're using inteliji idea - there can be the need to download and to add manually jar file for json-schema-validator
+4. To run tests using maven - mvn test -Dgroups=ApiTests or mvn test -Dgroups=UiTests
